@@ -133,20 +133,14 @@ h1 {
   position: relative;
 }
 
-.item-header-title:before {
-  content: "Початок:";
-  left: 2px;
-}
-
 .item-header-title:after {
   content: "Викладач:";
   right: 2px;
 }
 
-.item-header-title:before,
 .item-header-title:after {
   position: absolute;
-  bottom: -4px;
+  bottom: -20px;
   font-size: 10px;
   color: #000;
   background-color: #f2f2f2;
@@ -165,17 +159,6 @@ h1 {
   font-size: 18px;
 }
 
-.table-item span {
-  max-width: min-content;
-  color: rgb(77, 77, 77);
-}
-
-.table-item .time {
-  position: absolute;
-  left: 4px;
-  font-size: 13px;
-}
-
 .table-item .name {
   position: absolute;
   right: -12px;
@@ -187,6 +170,39 @@ h1 {
   font-size: 8px;
   color: #00f;
   transform: rotate(-90deg);
+}
+
+[id^="less_"]:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 0%;
+  background-color: #20b2aabf;
+}
+
+.item-day {
+  position: relative;
+}
+
+.item-day .time {
+  position: absolute;
+  right: 2px;
+  font-size: 11px;
+  color: #4d4d4d;
+}
+
+.item-day .time.start {
+  top: 2px;
+}
+
+.item-day .time.end {
+  bottom: 2px;
+}
+
+.bg-time {
+  background-color: #20b2aa;
 }
 
 /* media */
