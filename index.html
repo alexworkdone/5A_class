@@ -231,20 +231,20 @@
 
         const nowDay = new Date();
         const nowIndexDay = nowDay.getDay();
-
-        // Проскроллить к расписанию сегодняшнего дня
-        const scrollToDay = function () {
-          let index = nowIndexDay >= 2 && nowIndexDay <= 5 ? nowIndexDay - 1 : 0;
-          $(".table-slider").trigger("to.owl.carousel", index);
-        };
-
-        scrollToDay();
-
-        // Закрасить все прошедшие уроки
         const nowTime = nowDay.getTime();
         const nowHours = nowDay.getHours();
         const nowMinutes = nowDay.getMinutes();
+        const LessonFinalTime = new Date().setHours(18, 10, 0, 0);
 
+        // Проскроллить к расписанию сегодняшнего дня
+        function scrollToDay(index) {
+          $(".table-slider").trigger("to.owl.carousel", index);
+        }
+
+        let index = nowIndexDay >= 2 && nowIndexDay <= 5 ? nowIndexDay - 1 : 0;
+        scrollToDay(index);
+
+        // Закрасить все прошедшие уроки
         function endLessonToDay(itemStart, itemEnd, numLesson) {
           const [tsh, tsm] = $(itemStart).html().split(":");
           const [teh, tem] = $(itemEnd).html().split(":");
@@ -266,7 +266,12 @@
         $.each(arrTime, (index, item) => {
           const itemStart = $(item).find("[id^='time_start']");
           const itemEnd = $(item).find("[id^='time_end']");
-          endLessonToDay(itemStart, itemEnd, index + 1);
+
+          if (nowTime >= LessonFinalTime) {
+            scrollToDay(nowIndexDay - 1);
+          } else {
+            endLessonToDay(itemStart, itemEnd, index + 1);
+          }
         });
 
         setTimeout(function () {
