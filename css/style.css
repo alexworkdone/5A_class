@@ -201,7 +201,8 @@ h1 {
   bottom: 2px;
 }
 
-.bg-time {
+.bg-time,
+.owl-item.today_item .item-header-title {
   background-color: #20b2aa;
 }
 

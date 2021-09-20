@@ -203,7 +203,8 @@
 
     <script>
       $(document).ready(function () {
-        $(".table-slider").owlCarousel({
+        const carousel = $(".table-slider");
+        carousel.owlCarousel({
           loop: true,
           dots: false,
           merge: true,
@@ -238,7 +239,7 @@
 
         // Проскроллить к расписанию сегодняшнего дня
         function scrollToDay(index) {
-          $(".table-slider").trigger("to.owl.carousel", index);
+          carousel.trigger("to.owl.carousel", index);
         }
 
         let index = nowIndexDay >= 2 && nowIndexDay <= 5 ? nowIndexDay - 1 : 0;
@@ -263,16 +264,19 @@
         }
 
         const arrTime = $("[id^='less']");
-        $.each(arrTime, (index, item) => {
-          const itemStart = $(item).find("[id^='time_start']");
-          const itemEnd = $(item).find("[id^='time_end']");
 
-          if (nowTime >= LessonFinalTime) {
-            scrollToDay(nowIndexDay - 1);
-          } else {
+        if (nowTime >= LessonFinalTime) {
+          scrollToDay(nowIndexDay);
+        } else {
+          $.each(arrTime, (index, item) => {
+            const itemStart = $(item).find("[id^='time_start']");
+            const itemEnd = $(item).find("[id^='time_end']");
+
             endLessonToDay(itemStart, itemEnd, index + 1);
-          }
-        });
+          });
+        }
+
+        $($(".table-slider .owl-stage .owl-item.active")[0]).addClass("today_item");
 
         setTimeout(function () {
           location.reload();
