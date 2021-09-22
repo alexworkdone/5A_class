@@ -52,8 +52,7 @@
           </div>
         </div>
         <div class="owl-carousel table-slider">
-          <!-- Понеділок -->
-          <div class="table-col">
+          <div class="table-col" data-day="1">
             <div class="table-item item-header item-header-title">Понеділок</div>
             <div class="table-item">
               Інформатика
@@ -81,8 +80,7 @@
             </div>
             <div class="table-item">---</div>
           </div>
-          <!-- Вівторок -->
-          <div class="table-col">
+          <div class="table-col" data-day="2">
             <div class="table-item item-header item-header-title">Вівторок</div>
             <div class="table-item">
               Фізична культура
@@ -110,8 +108,7 @@
             </div>
             <div class="table-item">---</div>
           </div>
-          <!-- Середа -->
-          <div class="table-col">
+          <div class="table-col" data-day="3">
             <div class="table-item item-header item-header-title">Середа</div>
             <div class="table-item">
               Українська мова
@@ -139,8 +136,7 @@
             </div>
             <div class="table-item">---</div>
           </div>
-          <!-- Четвер -->
-          <div class="table-col">
+          <div class="table-col" data-day="4">
             <div class="table-item item-header item-header-title">Четвер</div>
             <div class="table-item">
               Українська мова
@@ -171,8 +167,7 @@
               <div class="name">Світлана Миколаївна</div>
             </div>
           </div>
-          <!-- П'ятниця -->
-          <div class="table-col">
+          <div class="table-col" data-day="5">
             <div class="table-item item-header item-header-title">П'ятниця</div>
             <div class="table-item">
               Природо<wbr />знавство
@@ -203,7 +198,55 @@
 
     <script>
       $(document).ready(function () {
+        var oneJan = new Date(new Date().getFullYear(), 0, 1);
+        var numberOfDays = Math.floor((new Date() - oneJan) / (24 * 60 * 60 * 1000));
+        var result = Math.ceil((new Date().getDay() + 1 + numberOfDays) / 7);
+
+        const oddWeek = !(result % 2); // четная
+
+        const arrTime = $("[id^='less']");
+
+        const timeLesson = {
+          start: ["11:00", "12:00", "12:55", "13:55", "14:50", "15:45", "16:35", "17:25"],
+          end: ["11:45", "12:45", "13:40", "14:40", "15:35", "16:30", "17:20", "18:10"],
+        };
+
         const carousel = $(".table-slider");
+
+        function callBack(event) {
+          setTimeout((item) => {
+            let nameDay = $($(".owl-item.active")[0]).find(".item-header-title")[0].innerText;
+
+            let nowTimeLesson = JSON.parse(JSON.stringify(timeLesson));
+
+            switch (nameDay) {
+              case "Середа":
+                if (oddWeek) {
+                  nowTimeLesson.start.pop();
+                  nowTimeLesson.end.pop();
+                } else {
+                  nowTimeLesson.start.shift();
+                  nowTimeLesson.end.shift();
+                }
+                break;
+
+              case "Четвер":
+                nowTimeLesson.start.pop();
+                nowTimeLesson.end.pop();
+                break;
+
+              default:
+                nowTimeLesson.start.shift();
+                nowTimeLesson.end.shift();
+            }
+
+            $.each(arrTime, (index, item) => {
+              $(item).find("[id^='time_start']").html(nowTimeLesson.start[index]);
+              $(item).find("[id^='time_end']").html(nowTimeLesson.end[index]);
+            });
+          }, 100);
+        }
+
         carousel.owlCarousel({
           loop: true,
           dots: false,
@@ -211,6 +254,8 @@
           nav: false,
           stagePadding: 10,
           margin: 10,
+          onInitialized: callBack,
+          onChanged: callBack,
           responsive: {
             1200: {
               items: 5,
@@ -245,6 +290,11 @@
         let index = nowIndexDay >= 2 && nowIndexDay <= 5 ? nowIndexDay - 1 : 0;
         scrollToDay(index);
 
+        // После инициализации назначить класс на сегодняшний день
+        $(`[data-day='${nowIndexDay}']`).each((index, item) => {
+          $(item)[0].classList.add("today_item");
+        });
+
         // Закрасить все прошедшие уроки
         function endLessonToDay(itemStart, itemEnd, numLesson) {
           const [tsh, tsm] = $(itemStart).html().split(":");
@@ -263,8 +313,6 @@
           }
         }
 
-        const arrTime = $("[id^='less']");
-
         if (nowTime >= LessonFinalTime) {
           scrollToDay(nowIndexDay);
         } else {
@@ -275,8 +323,6 @@
             endLessonToDay(itemStart, itemEnd, index + 1);
           });
         }
-
-        $($(".table-slider .owl-stage .owl-item.active")[0]).addClass("today_item");
 
         setTimeout(function () {
           location.reload();
