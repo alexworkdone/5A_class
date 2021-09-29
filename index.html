@@ -244,6 +244,8 @@
               $(item).find("[id^='time_start']").html(nowTimeLesson.start[index]);
               $(item).find("[id^='time_end']").html(nowTimeLesson.end[index]);
             });
+
+            drowFirstLesson();
           }, 100);
         }
 
@@ -322,6 +324,17 @@
 
             endLessonToDay(itemStart, itemEnd, index + 1);
           });
+        }
+
+        // Найти начало первого урока
+        function drowFirstLesson() {
+          const itemFirstStart = $("#time_start_1");
+          const [tfsh, tfsm] = $(itemFirstStart).html().split(":");
+          const firstLessonStartTime = new Date().setHours(tfsh, tfsm, 0, 0);
+
+          if (firstLessonStartTime >= nowTime) {
+            itemFirstStart[0].classList.add("danger-animate");
+          }
         }
 
         setTimeout(function () {
