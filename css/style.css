@@ -76,7 +76,7 @@ h6 {
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
 }
 
 body {
@@ -86,7 +86,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
-  background: url(../img/bg-arrow.jpeg) no-repeat center center #1c7cbb;
+  background: url(../img/s_man.jpeg) no-repeat center center #d67e4a;/* bg-arrow.jpeg #1c7cbb */
   background-size: cover;
 }
 
@@ -99,9 +99,10 @@ body {
 
 h1 {
   padding: 24px 0;
-  color: #fff;
+  color: rgb(244 241 218);
   font-weight: 700;
   text-align: center;
+  text-shadow: 0 1px 3px #000;
 }
 
 .owl-carousel {
@@ -122,6 +123,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 1px 2px 0 #000;
 }
 
 .item-header {
@@ -242,6 +244,10 @@ h1 {
 .bg-time,
 .owl-item .today_item .item-header-title {
   background-color: #20b2aa;
+}
+
+.opacity65 {
+  opacity: 0.65;
 }
 
 /* media */

@@ -12,7 +12,7 @@
   <body>
     <div class="container">
       <h1>Розклад уроків 5-A класу</h1>
-      <div class="flex">
+      <div class="flex opacity65">
         <div class="table-day">
           <div class="item-day item-header">Номер уроку</div>
           <div id="less_1" class="item-day">
@@ -200,7 +200,9 @@
       $(document).ready(function () {
         var oneJan = new Date(new Date().getFullYear(), 0, 1);
         var numberOfDays = Math.floor((new Date() - oneJan) / (24 * 60 * 60 * 1000));
-        var result = Math.ceil((new Date().getDay() + 1 + numberOfDays) / 7);
+        var result = Math.ceil((new Date().getDay() + 6 + numberOfDays) / 7);
+
+        console.log('result ->', result);
 
         const oddWeek = !(result % 2); // четная
 
@@ -224,9 +226,11 @@
                 if (oddWeek) {
                   nowTimeLesson.start.pop();
                   nowTimeLesson.end.pop();
+                  console.log('oddWeek Середа ->', nowTimeLesson);
                 } else {
                   nowTimeLesson.start.shift();
                   nowTimeLesson.end.shift();
+                  console.log('!oddWeek Середа ->', nowTimeLesson);
                 }
                 break;
 
