@@ -207,9 +207,7 @@
         var numberOfDays = Math.floor((new Date() - oneJan) / (24 * 60 * 60 * 1000));
         var result = Math.ceil((new Date().getDay() + 6 + numberOfDays) / 7);
 
-        console.log('result ->', result);
-
-        const oddWeek = !(result % 2); // четная
+        const oddWeek = !!(result % 2); // четная
 
         const arrTime = $("[id^='less']");
 
