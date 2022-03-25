@@ -11,13 +11,10 @@
   </head>
   <body>
     <div class="container">
-      <a class="snowflakes" href="https://www.youtube.com/watch?v=WNaJzX6rWqc" title="Best Video">
-        <img src="img/snowflakes.png" alt="snowflakes" />
-      </a>
       <h1>
         Розклад уроків 5-A класу
       </h1>
-      <div class="flex opacity65">
+      <div class="flex opacity8">
         <div class="table-day">
           <div class="item-day item-header">Номер уроку</div>
           <div id="less_1" class="item-day">
@@ -207,7 +204,7 @@
         var numberOfDays = Math.floor((new Date() - oneJan) / (24 * 60 * 60 * 1000));
         var result = Math.ceil((new Date().getDay() + 6 + numberOfDays) / 7);
 
-        const oddWeek = !!(result % 2); // четная
+        const oddWeek = Boolean(result % 2); // четная
 
         const arrTime = $("[id^='less']");
 
@@ -229,11 +226,9 @@
                 if (oddWeek) {
                   nowTimeLesson.start.pop();
                   nowTimeLesson.end.pop();
-                  console.log('oddWeek Середа ->', nowTimeLesson);
                 } else {
                   nowTimeLesson.start.shift();
                   nowTimeLesson.end.shift();
-                  console.log('!oddWeek Середа ->', nowTimeLesson);
                 }
                 break;
 
