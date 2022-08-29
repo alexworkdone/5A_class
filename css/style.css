@@ -80,14 +80,26 @@ body {
 }
 
 body {
-  background-color: #fff;
+  position: relative;
+  background-color: #ffe298;
   font-family: Arial, Helvetica, sans-serif;
   color: #000;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
-  background: url(../img/ua-flag.jpg) no-repeat center center #f1d100;/* bg-arrow.jpeg #1c7cbb */
+  min-height: 100vh;
+}
+
+body:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url(../img/ua.jpeg) no-repeat center center #ffe298;/* bg-arrow.jpeg #1c7cbb */
   background-size: cover;
+  opacity: 0.5;
 }
 
 .container {
