@@ -99,7 +99,7 @@ body:before {
   left: 0;
   background: url(../img/ua.jpeg) no-repeat center center #ffe298;/* bg-arrow.jpeg #1c7cbb */
   background-size: cover;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .container {
