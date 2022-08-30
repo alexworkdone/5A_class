@@ -18,39 +18,39 @@
         <div class="table-day">
           <div class="item-day item-header">Номер уроку</div>
           <div id="less_1" class="item-day">
-            <span id="time_start_1" class="time start">12:00</span>
+            <span id="time_start_1" class="time start">8:00</span>
             1 урок
-            <span id="time_end_1" class="time end">12:45</span>
+            <span id="time_end_1" class="time end">8:45</span>
           </div>
           <div id="less_2" class="item-day">
-            <span id="time_start_2" class="time start">12:55</span>
+            <span id="time_start_2" class="time start">9:00</span>
             2 урок
-            <span id="time_end_2" class="time end">13:40</span>
+            <span id="time_end_2" class="time end">9:45</span>
           </div>
           <div id="less_3" class="item-day">
-            <span id="time_start_3" class="time start">13:55</span>
+            <span id="time_start_3" class="time start">10:00</span>
             3 урок
-            <span id="time_end_3" class="time end">14:40</span>
+            <span id="time_end_3" class="time end">10:45</span>
           </div>
           <div id="less_4" class="item-day">
-            <span id="time_start_4" class="time start">14:50</span>
+            <span id="time_start_4" class="time start">11:00</span>
             4 урок
-            <span id="time_end_4" class="time end">15:35</span>
+            <span id="time_end_4" class="time end">11:45</span>
           </div>
           <div id="less_5" class="item-day">
-            <span id="time_start_5" class="time start">15:45</span>
+            <span id="time_start_5" class="time start">12:00</span>
             5 урок
-            <span id="time_end_5" class="time end">16:30</span>
+            <span id="time_end_5" class="time end">12:45</span>
           </div>
           <div id="less_6" class="item-day">
-            <span id="time_start_6" class="time start">16:35</span>
+            <span id="time_start_6" class="time start">12:55</span>
             6 урок
-            <span id="time_end_6" class="time end">17:20</span>
+            <span id="time_end_6" class="time end">13:40</span>
           </div>
           <div id="less_7" class="item-day">
-            <span id="time_start_7" class="time start">17:25</span>
+            <span id="time_start_7" class="time start">13:55</span>
             7 урок
-            <span id="time_end_7" class="time end">18:10</span>
+            <span id="time_end_7" class="time end">14:40</span>
           </div>
         </div>
 
@@ -59,15 +59,15 @@
             <div class="table-item item-header item-header-title">Понеділок</div>
             <div class="table-item">
               Біологія
-              <div class="name"></div>
+              <div class="name">Світлана Олексіївна</div>
             </div>
             <div class="table-item">
               Біологія
-              <div class="name"></div>
+              <div class="name">Світлана Олексіївна</div>
             </div>
             <div class="table-item">
               Географія
-              <div class="name"></div>
+              <div class="name">Наталія Миколаївна</div>
             </div>
             <div class="table-item">
               Математика
@@ -75,15 +75,15 @@
             </div>
             <div class="table-item">
               Англійська мова
-              <div class="name">Віта Андріївна</div>
+              <div class="name">Наталія Миколаївна / Віта Андріївна</div>
             </div>
             <div class="table-item">
               Трудове навчання
-              <div class="name">Інна Володимирівна</div>
+              <div class="name">Світлана Миколаївна</div>
             </div>
             <div class="table-item">
               Трудове навчання
-              <div class="name">Інна Володимирівна</div>
+              <div class="name">Світлана Миколаївна</div>
             </div>
           </div>
 
@@ -91,7 +91,7 @@
             <div class="table-item item-header item-header-title">Вівторок</div>
             <div class="table-item">
               Основи здоровя
-              <div class="name"></div>
+              <div class="name">Олена Вікторівна</div>
             </div>
             <div class="table-item">
               Інформатика
@@ -107,7 +107,7 @@
             </div>
             <div class="table-item">
               Географія
-              <div class="name"></div>
+              <div class="name">Наталія Миколаївна</div>
             </div>
             <div class="table-item">
               Фізична культура
@@ -136,7 +136,7 @@
             </div>
             <div class="table-item">
               Англійська мова
-              <div class="name">Віта Андріївна</div>
+              <div class="name">Наталія Миколаївна / Віта Андріївна</div>
             </div>
             <div class="table-item">---</div>
             <div class="table-item">---</div>
@@ -162,7 +162,7 @@
             </div>
             <div class="table-item">
               Англійська мова
-              <div class="name">Віта Андріївна</div>
+              <div class="name">Наталія Миколаївна / Віта Андріївна</div>
             </div>
             <div class="table-item">
               Математика
@@ -217,8 +217,8 @@
         const arrTime = $("[id^='less']");
 
         const timeLesson = {
-          start: ["8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00"],
-          end: ["8:45", "9:45", "10:45", "11:45", "12:45", "13:45", "14:45", "15:45"],
+          start: ["8:00", "9:00", "10:00", "11:00", "12:00", "12:55", "13:55", "14:50"],
+          end: ["8:45", "9:45", "10:45", "11:45", "12:45", "13:40", "14:40", "15:35"],
         };
 
         const carousel = $(".table-slider");
@@ -250,8 +250,8 @@
             //     nowTimeLesson.end.shift();
             // }
 
-            nowTimeLesson.start.shift();
-            nowTimeLesson.end.shift();
+            nowTimeLesson.start.pop();
+            nowTimeLesson.end.pop();
 
             $.each(arrTime, (index, item) => {
               $(item).find("[id^='time_start']").html(nowTimeLesson.start[index]);
