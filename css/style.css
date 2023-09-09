@@ -61,7 +61,7 @@ h6 {
 }
 
 /* scrollbar -------------------------------------------------------- */
-*::-webkit-scrollbar {
+/* *::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
@@ -72,7 +72,7 @@ h6 {
 *::-webkit-scrollbar-thumb {
   background-color: #cbcbcb;
   border-radius: 4px;
-}
+} */
 
 html,
 body {
@@ -81,7 +81,7 @@ body {
 
 body {
   position: relative;
-  background-color: #0073ff5c;
+  background-color: transparent;
   font-family: Arial, Helvetica, sans-serif;
   color: #000;
   font-size: 16px;
@@ -97,9 +97,11 @@ body:before {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(../img/ua.jpeg) no-repeat center center #ffe298; /* bg-arrow.jpeg #1c7cbb */
-  background-size: cover;
-  opacity: 0.3;
+  background: url(../img/bezzubik.jpeg) no-repeat center center #000000;
+  background-size: 80vw;
+  /* background: url(../img/bezzubik.jpeg) no-repeat center center transparent; /* bg-arrow.jpeg #1c7cbb */
+  /* background-size: cover; */
+  /* opacity: 0.3; */
 }
 
 .container {
@@ -109,12 +111,28 @@ body:before {
   width: 100%;
 }
 
+@keyframes fire {
+  0% {
+    text-shadow: 0 1px 12px #f00, 1px 0 12px #f00;
+  }
+  33% {
+    text-shadow: 0 0 10px #ff7700, 0 10px 20px #f00;
+  }
+  67% {
+    text-shadow: 10px 0 20px #f00, 0 0 10px #ff7700;
+  }
+  100% {
+    text-shadow: 0 1px 12px #f00, 1px 0 12px #f00;
+  }
+}
+
 h1 {
+  position: relative;
   padding: 24px 0;
-  color: rgb(244 241 218);
+  /* color: rgb(244 241 218); */
   font-weight: 700;
   text-align: center;
-  text-shadow: 0 1px 3px #000;
+  animation: fire 3s ease-in-out infinite;
 }
 
 .owl-carousel {
@@ -131,11 +149,10 @@ h1 {
   margin-bottom: 10px;
   padding: 8px;
   text-align: center;
-  background: #f2f2f2;
+  background: rgb(242 242 242 / 60%);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 1px 2px 0 #000;
 }
 
 .item-header {
@@ -149,17 +166,14 @@ h1 {
 
 .item-header-title:after {
   content: 'Викладач:';
-  right: 2px;
-}
-
-.item-header-title:after {
   position: absolute;
-  bottom: -20px;
+  right: 0;
+  bottom: -10px;
   font-size: 10px;
   color: #000;
-  background-color: #f2f2f2;
-  padding: 4px 8px;
-  border-radius: 50%;
+  background-color: rgb(242 242 242 / 60%);
+  padding: 4px 8px 0;
+  border-radius: 50% 50% 0 0;
 }
 
 .item-day,
@@ -258,8 +272,8 @@ h1 {
   background-color: #20b2aa;
 }
 
-.opacity8 {
-  opacity: 0.8;
+.opacity5 {
+  opacity: 0.5;
 }
 
 /* media */
