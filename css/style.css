@@ -81,7 +81,7 @@ body {
 
 body {
   position: relative;
-  background-color: #ffe298;
+  background-color: #0073ff5c;
   font-family: Arial, Helvetica, sans-serif;
   color: #000;
   font-size: 16px;
@@ -97,7 +97,7 @@ body:before {
   right: 0;
   bottom: 0;
   left: 0;
-  background: url(../img/ua.jpeg) no-repeat center center #ffe298;/* bg-arrow.jpeg #1c7cbb */
+  background: url(../img/ua.jpeg) no-repeat center center #ffe298; /* bg-arrow.jpeg #1c7cbb */
   background-size: cover;
   opacity: 0.3;
 }
@@ -148,7 +148,7 @@ h1 {
 }
 
 .item-header-title:after {
-  content: "Викладач:";
+  content: 'Викладач:';
   right: 2px;
 }
 
@@ -186,8 +186,8 @@ h1 {
   transform: rotate(-90deg);
 }
 
-[id^="less_"]:before {
-  content: "";
+[id^='less_']:before {
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
