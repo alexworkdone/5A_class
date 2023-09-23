@@ -135,6 +135,20 @@ h1 {
   animation: fire 3s ease-in-out infinite;
 }
 
+.link-mat {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  color: aqua;
+  font-size: 12px;
+  cursor: pointer;
+
+  &:hover {
+    color: #ff7700;
+  }
+}
+
 .owl-carousel {
   width: calc(100% - 80px);
 }
