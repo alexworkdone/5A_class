@@ -136,16 +136,16 @@ h1 {
 }
 
 .link-mat {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  color: aqua;
-  font-size: 12px;
+  margin: 0 12px;
+  color: white;
+  font-size: 14px;
+  text-shadow: 0px 0px 3px black, 0px 0px 7px black;
   cursor: pointer;
+  transition: all 0.2s linear;
 
   &:hover {
-    color: #ff7700;
+    color: green;
+    text-shadow: 0px 0px 3px yellow, 0px 0px 7px yellow;
   }
 }
 
@@ -163,7 +163,7 @@ h1 {
   margin-bottom: 10px;
   padding: 8px;
   text-align: center;
-  background: rgb(242 242 242 / 60%);
+  background: rgba(242, 242, 242, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -222,6 +222,19 @@ h1 {
   left: 0;
   height: 0%;
   background-color: #20b2aabf;
+}
+
+#less_4 {
+  border-radius: 50% 0 0 50% !important;
+}
+
+.bg-multicolor {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 5px,
+    #ffe300 5px 10px
+  );
+  border-radius: 50%;
 }
 
 .item-day {
@@ -284,10 +297,6 @@ h1 {
 .bg-time,
 .owl-item .today_item .item-header-title {
   background-color: #20b2aa;
-}
-
-.opacity5 {
-  opacity: 0.5;
 }
 
 /* media */
