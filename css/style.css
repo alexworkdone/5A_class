@@ -299,6 +299,41 @@ h1 {
   background-color: #20b2aa;
 }
 
+.get-home-work {
+  position: relative;
+  margin: 20px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+  z-index: 0;
+  cursor: pointer;
+  padding: 6px 32px;
+  font-size: 18px;
+  min-height: 52px;
+}
+
+.get-home-work,
+.get-home-work.invert:hover {
+  background: #fff;
+  color: #000;
+}
+
+.get-home-work:hover,
+.get-home-work.invert {
+  border-color: green;
+  background: lightgreen;
+  color: red;
+}
+
 /* media */
 @media (max-width: 1200px) {
   .table-item:not(.item-header),

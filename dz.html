@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Домашне завдання</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>
+      Домашне завдання
+    </h1>
+
+    <div id="home-work"></div>
+  </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      function loginToWebsite(username, password) {
+        var loginUrl = 'https://nz.ua/login';
+
+        var data = {
+          username: username,
+          password: password
+        };
+
+        $.ajax({
+          type: 'POST',
+          url: loginUrl,
+          data: data,
+          success: function (response) {
+            console.log('Успішно авторизовано', response);
+          },
+          error: function (error) {
+            console.error('Помилка авторизації', error);
+          }
+        });
+      }
+
+      function goToPage(url) {
+        $.get('https://nz.ua/login', function (data) {
+          return $(data).find('.sb-home-work');
+        });
+      }
+
+      async function getHomeWork() {
+        await loginToWebsite('bashinskiy_andriy1', '560139nt');
+
+        let homeWorkBlock = await goToPage('https://nz.ua/school22264/schedule/diary');
+
+        await $('#home-work').html(homeWorkBlock);
+      }
+
+      getHomeWork();
+    });
+  </script>
+</body>
+
+</html>
