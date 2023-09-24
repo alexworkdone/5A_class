@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Розклад - 7 класс</title>
+  <title>Розклад - 7 клас</title>
 
   <link rel="stylesheet" href="css/owl.carousel.min.css" />
   <link rel="stylesheet" href="css/style.css" />
@@ -325,7 +325,7 @@
       let index = nowIndexDay >= 2 && nowIndexDay <= 5 ? nowIndexDay - 1 : 0;
       scrollToDay(index);
 
-      // После инициализации назначить класс на сегодняшний день
+      // После инициализации назначить клас на сегодняшний день
       $(`[data-day='${nowIndexDay}']`).each((index, item) => {
         $(item)[0].classList.add("today_item");
       });
