@@ -302,12 +302,13 @@ h1 {
 .get-home-work {
   position: relative;
   margin: 20px auto 0;
+  max-width: 470px;
   display: flex;
   justify-content: center;
   align-items: center;
   vertical-align: middle;
   border: 2px solid transparent;
-  border-radius: 20px;
+  border-radius: 50%;
   font-weight: 400;
   line-height: 1;
   text-align: center;
@@ -318,20 +319,26 @@ h1 {
   cursor: pointer;
   padding: 6px 32px;
   font-size: 18px;
-  min-height: 52px;
+  min-height: 44px;
 }
 
 .get-home-work,
 .get-home-work.invert:hover {
-  background: #fff;
+  background: #ffff00c4;
   color: #000;
 }
 
 .get-home-work:hover,
 .get-home-work.invert {
-  border-color: green;
+  border-color: lightgreen;
   background: lightgreen;
   color: red;
+}
+
+.get-home-work:hover {
+  transform: translateY(-3px) rotateX(30deg);
+  transform-origin: top center;
+  box-shadow: 0 24px 10px -13px #ffffff80;
 }
 
 /* media */
