@@ -48,6 +48,12 @@ h6 {
   font-weight: 400;
 }
 
+h2 {
+  position: relative;
+  color: #fff;
+  text-align: center;
+}
+
 :focus {
   outline: none;
 }
