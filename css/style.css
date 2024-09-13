@@ -11,6 +11,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --multi-rgb: 254 203 59;
+  --multi: rgb(var(--multi-rgb) / 100%);
+  --multi-50: rgb(var(--multi-rgb) / 50%);
+}
+
 main,
 nav,
 section,
@@ -107,7 +113,8 @@ body:before {
   background-size: 80vw;
   /* background: url(../img/bezzubik.jpeg) no-repeat center center transparent; /* bg-arrow.jpeg #1c7cbb */
   background-size: cover;
-  /* opacity: 0.3; */
+  background-attachment: fixed;
+  opacity: 0.5;
 }
 
 .container {
@@ -119,23 +126,23 @@ body:before {
 
 @keyframes fire {
   0% {
-    text-shadow: 0 1px 12px #f00, 1px 0 12px #f00;
+    text-shadow: 0 1px 20px #000, 1px 0 20px #000;
   }
   33% {
-    text-shadow: 0 0 10px #ff7700, 0 10px 20px #f00;
+    text-shadow: 0 0 15px #ff7700, 0 15px 30px #000;
   }
   67% {
-    text-shadow: 10px 0 20px #f00, 0 0 10px #ff7700;
+    text-shadow: 15px 0 30px #000, 0 0 15px #ff7700;
   }
   100% {
-    text-shadow: 0 1px 12px #f00, 1px 0 12px #f00;
+    text-shadow: 0 1px 20px #000, 1px 0 20px #000;
   }
 }
 
 h1 {
   position: relative;
   padding: 24px 0;
-  color: #2bfbef;
+  color: #2bfb5b;
   font-weight: 700;
   text-align: center;
   animation: fire 3s ease-in-out infinite;
@@ -233,11 +240,12 @@ h1 {
   right: 0;
   left: 0;
   height: 0%;
-  background-color: #20b2aabf;
+  background-color: var(--multi-50);
 }
 
 #less_5 {
   border-radius: 50% 0 0 50% !important;
+  overflow: hidden;
 }
 
 .bg-multicolor {
@@ -308,7 +316,7 @@ h1 {
 
 .bg-time,
 .owl-item .today_item .item-header-title {
-  background-color: #20b2aa;
+  background-color: var(--multi);
 }
 
 .get-home-work {
