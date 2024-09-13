@@ -247,10 +247,10 @@ h1 {
   background-color: var(--multi-50);
 }
 
-#less_5 {
+/* #less_5 {
   border-radius: 50% 0 0 50% !important;
   overflow: hidden;
-}
+} */
 
 .bg-multicolor {
   background-image: repeating-linear-gradient(
